@@ -15,5 +15,6 @@ model user {
   name   String
   email  String @unique
   number String
+  password String 
   city   String
 }

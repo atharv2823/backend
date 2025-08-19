@@ -3,13 +3,14 @@ import prisma from "../db/config.js";
 // create User
 
 export const createUser = async (req, res) => {
-  const { name, email, number, city } = req.body;
+  const { name, email, number, city, password } = req.body;
   try {
     const newUser = await prisma.user.create({
       data: {
         name: req.body.name,
         email: req.body.email,
         number: req.body.number,
+        password: req.body.password,
         city: req.body.city,
       },
     });
