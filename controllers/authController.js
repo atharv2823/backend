@@ -32,13 +32,6 @@ export const login = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: "User login failed" });
   }
-  if (data.token) {
-    // Store token
-    localStorage.setItem("authToken", data.token);
-
-    // Store all user details
-    localStorage.setItem("user", JSON.stringify(data.user));
-  }
 };
 
 
